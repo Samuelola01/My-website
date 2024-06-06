@@ -14,17 +14,36 @@
             color: #333;
         }
         header {
-            background-color: #4a90e2;
+            background: url('https://drive.google.com/file/d/1A6XeT__5SPMqIjUwtO3Vm8hFTHEcLlUV/view?usp=drivesdk') center/cover no-repeat, linear-gradient(45deg, rgba(74, 144, 226, 0.7), rgba(106, 90, 205, 0.7));
             color: white;
-            padding: 1em 0;
+            padding: 3em 0;
             text-align: center;
+            position: relative;
+        }
+        header::before {
+            content: "";
+            background: linear-gradient(45deg, rgba(74, 144, 226, 0.7), rgba(106, 90, 205, 0.7));
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 1;
+        }
+        header h1, header p {
+            position: relative;
+            z-index: 2;
         }
         header h1 {
             margin: 0;
             font-size: 2.5em;
         }
+        header p {
+            margin: 0;
+            font-size: 1.2em;
+        }
         nav {
-            background-color: #333;
+            background: linear-gradient(45deg, #333, #575757);
             overflow: hidden;
         }
         nav a {
@@ -36,7 +55,7 @@
             text-decoration: none;
         }
         nav a:hover {
-            background-color: #575757;
+            background: linear-gradient(45deg, #575757, #333);
         }
         .container {
             padding: 2em;
@@ -52,8 +71,48 @@
         footer {
             text-align: center;
             padding: 1em 0;
-            background-color: #333;
+            background: linear-gradient(45deg, #333, #575757);
             color: white;
+        }
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2em;
+            }
+            nav a {
+                float: none;
+                width: 100%;
+                text-align: left;
+                padding: 10px 15px;
+            }
+            .container {
+                padding: 1em;
+            }
+            .section {
+                margin-bottom: 1.5em;
+            }
+            h2 {
+                font-size: 1.5em;
+            }
+        }
+        @media (max-width: 480px) {
+            header {
+                padding: 2em 0;
+            }
+            header h1 {
+                font-size: 1.8em;
+            }
+            nav a {
+                padding: 8px 10px;
+            }
+            .container {
+                padding: 0.5em;
+            }
+            .section {
+                margin-bottom: 1em;
+            }
+            h2 {
+                font-size: 1.2em;
+            }
         }
     </style>
 </head>
